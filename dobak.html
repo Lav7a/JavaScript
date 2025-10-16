@@ -29,7 +29,7 @@
 
 
         document.getElementById('dobakButton').addEventListener('click', function() {
-            const randomChange = Math.floor(Math.random() * 2101) - 1200;
+            const randomChange = Math.floor(Math.random() * 10000) - 5000;
             money += randomChange;
             moneyText.textContent = `현재 돈: ${money}`;
         })
@@ -45,4 +45,5 @@
     </script>
 
 </body>
+
 </html>
