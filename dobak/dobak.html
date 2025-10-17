@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="dobak.css">
+</head>
+<body>
+    
+    <p1 id="money"></p1>
+    <p2 id="no">돈이 없습니다</p2>
+    <button id="reset">초기화</button>
+    <button id="dobakButton">도박하기</button>
+
+
+    <script>
+
+        let money = 10000;
+
+        const moneyText = document.getElementById('money');
+
+        moneyText.textContent = `현재 돈: ${money}`
+
+        document.getElementById('dobakButton').addEventListener('click', function() {
+            if (money <= 0) {
+            document.getElementById('no').style.display = 'block';
+            document.getElementById('money').style.display = 'none';
+        }})
+
+
+        document.getElementById('dobakButton').addEventListener('click', function() {
+            const randomChange = Math.floor(Math.random() * 20000) - 11000;
+            money += randomChange;
+            moneyText.textContent = `현재 돈: ${money}`;
+        })
+
+        document.getElementById('reset').addEventListener('click', function() {
+            document.getElementById('no').style.display = 'none'
+            document.getElementById('money').style.display = 'block';
+            money = 10000;
+            moneyText.textContent = `현재 돈: ${money}`;
+        })
+
+
+    </script>
+
+</body>
+
+</html>
